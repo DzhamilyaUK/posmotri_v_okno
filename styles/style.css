@@ -48,13 +48,10 @@ ol {
   inline-size: 1140px;
 }
 
-.result {
- 
-}
 
 .button {
 display: flex;
-font-family: Fira Sans Condensed;
+font-family: Fira Sans Condensed, sans-serif;
 font-size: 18px;
 font-weight: 700;
 line-height: 21.6px;
@@ -63,7 +60,7 @@ justify-content: center;
 align-items: center;
 color: #fff;
 background-color: transparent;
-border: 1px solid #fff;
+border: 1px solid currentColor;
 height: 34px;
 cursor: pointer;
 }
@@ -73,11 +70,20 @@ cursor: pointer;
   outline-offset: 1px;
 }
 
+button:active {
+  background: #545050;
+}
+
 .result__video-container {
   inline-size: 711px;
   block-size: 386px;
   margin-bottom: 16px;
   position: relative;
+}
+
+.button:hover {
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 .result__video {
@@ -92,7 +98,6 @@ cursor: pointer;
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
-  height: 50px;
 }
 
 .search-form__fieldset{
@@ -102,7 +107,7 @@ cursor: pointer;
 }
 
 .search-form__fieldset-title {
-  font-family: Fira Sans Condensed;
+  font-family: Fira Sans Condensed, sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 21.6px;
@@ -117,6 +122,7 @@ cursor: pointer;
   border: 1px solid transparent;
   width: fit-content;
   gap: 5px;
+  cursor: pointer;
 }
 
 .search-form__label:has(:focus-visible) {
@@ -137,7 +143,7 @@ cursor: pointer;
 }
 
 .search-form__label-text {
-  font-family: Fira Sans Condensed;
+  font-family: Fira Sans Condensed, sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 21.6px;
@@ -150,7 +156,7 @@ cursor: pointer;
   width: 225px;
   height: 27px;
   padding: 2.5px 13px 2.5px 0px;
-  font-family: Fira Sans Condensed;
+  font-family: Fira Sans Condensed, sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 21.6px;
@@ -159,7 +165,6 @@ cursor: pointer;
   border-style: solid;
   border-color: #FFFFFF;
   background-color: transparent;
-  cursor: pointer;
   appearance: none;
 }
 
@@ -210,22 +215,12 @@ cursor: pointer;
 display: flex;
 align-self: end;
 inline-size: 194px;
-font-family: Fira Sans Condensed;
+font-family: Fira Sans Condensed, sans-serif;
 font-size: 17px;
 font-weight: 700;
 line-height: 20.6px;
 text-align: center;
 }
-
-.search-form__submit-button:active{
-background: #545050;
-}
-
-.search-form__submit-button:hover{
-  text-decoration: underline;
-  text-underline-offset: 2px;
-}
-
 
 .content__details {
   display: flex;
@@ -243,7 +238,6 @@ background: #545050;
   line-height: 70.5px;
   text-align: left;
   width: 260px;
-  height: 210px;
   text-transform: uppercase;
 }
 
@@ -253,7 +247,7 @@ color: #545050;
 
 .content__list {
   height: 298px;
-  overflow: hidden scroll;
+  overflow: scroll;
   position: relative;
 }
 
@@ -264,7 +258,7 @@ margin-bottom: 32px;
 
 .content__card-link {
   display: block;
-  margin: 3px;
+  margin: 2px;
   text-decoration: none;
   color: #fff;
 }
@@ -279,17 +273,22 @@ margin-bottom: 32px;
   align-items: flex-start;
 }
 
-.content__video-card:hover{
+.content__card-link:active {
+  background: #545050;
+}
+
+.content__card-link:hover{
   text-decoration: underline;
   text-underline-offset: 1px;
 }
 
 
-.content__video-card:focus {
+.content__card-link:focus {
   outline: none;
 }
 
-.content__video-card:has(:focus-visible) {
+.content__card-link:focus-visible {
+  outline: 1px solid #fff;
   outline-offset: -1px;
 }
 
@@ -319,8 +318,9 @@ margin-bottom: 32px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  
 /*добавить ограничение по ширине как в макете.*/
-  font-family: Fira Sans Condensed;
+  font-family: Fira Sans Condensed, sans-serif;
   font-size: 16px;
   font-weight: 100;
   line-height: 17.2px;
@@ -329,6 +329,8 @@ margin-bottom: 32px;
 }
 
 .content__video-card-thumbnail {
+  object-position: center;
+  object-fit: cover;
   width: 194px;
   height: 103px;
   /*сюда надо замостить изображение.*/
